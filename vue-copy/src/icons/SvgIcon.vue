@@ -20,7 +20,7 @@ export default {
     iconClass: {
         get: function() {
           if(this._props.className){
-            return `svg-icon ${this._props.className}`;
+            return `${this._props.className}`;
           }else{
             return `svg-icon`;
           }

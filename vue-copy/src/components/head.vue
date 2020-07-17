@@ -1,27 +1,37 @@
 <template>
   <div>
-    <el-menu :default-active="activeIndex" mode="horizontal" @select="handleSelect" router>
-      <template v-for="(item,index) in routers">
-          <el-submenu v-if="item.children" :key="index" :index="item.path">
-            <template slot="title">
-              <svg-icon :icon="item.icon"/>
-              {{item.name}}
-            </template>
-            <template v-for="(subItem,subindex) in item.children">
-              <el-menu-item :key="index+''+subindex" :index="subItem.path">{{subItem.name}}</el-menu-item>
-            </template>
-          </el-submenu>
+    <el-menu 
+      :default-active="activeIndex" 
+      class="el-menu-demo el-row" 
+      mode="horizontal" 
+      @select="handleSelect" 
+      router
+      background-color="#F5F5F5"
+      unique-opened>
+        <template v-for="(item,index) in routers">
+              <el-submenu v-if="item.children" :index="item.path" class="el-col el-col-2" :key="index">
+                <template slot="title">
+                  <svg-icon :icon="item.icon"/>
+                  {{item.name}}
+                </template>
+                <template v-for="(subItem,subindex) in item.children">
+                  <el-menu-item :key="index+''+subindex" :index="subItem.path">{{subItem.name}}</el-menu-item>
+                </template>
+              </el-submenu>
 
-          <el-menu-item v-else :key="index" :index="item.path">
-            <template slot="title">
-              <svg-icon :icon="item.icon"/>
-              {{item.name}}
-              </template>
-            <template v-for="(subItem,subindex) in item.children">
-              <el-menu-item :key="index+''+subindex" :index="subItem.path">{{subItem.name}}</el-menu-item>
-            </template>
-          </el-menu-item>
-      </template>
+              <el-menu-item v-else :index="item.path" :span="2" class="el-col el-col-2" :key="index">
+                <template slot="title">
+                  <svg-icon :icon="item.icon"/>
+                  {{item.name}}
+                  </template>
+                <template v-for="(subItem,subindex) in item.children">
+                  <el-menu-item :key="index+''+subindex" :index="subItem.path">{{subItem.name}}</el-menu-item>
+                </template>
+              </el-menu-item>
+
+              
+              <div v-if="index===3" class="el-col el-col-2" :key="index+8"></div>
+        </template>
     </el-menu>
   </div>
 </template>
@@ -42,17 +52,16 @@ export default {
   },
   mounted(){
   },
+  created(){
+    this.routers.shift();
+    this.routers.shift();
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-.menuWrap {
-  background-color: rgb(245, 245, 245);
-  font-size: 10px;
-  font-family: "宋体";
-  div:hover {
-      color: rgb(242, 46, 0);
-      cursor: pointer;
-  }
+.el-menu-demo{
+  height:20px;
+  line-height: 0;
 }
 </style>

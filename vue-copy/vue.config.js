@@ -35,16 +35,21 @@ module.exports = {
   // 生产环境是否生成 sourceMap 文件
   productionSourceMap: false,
   // css相关配置
-  /*css: {
-      // 是否使用css分离插件 ExtractTextPlugin
+  css: {
+      // 将组件内的 CSS 提取到一个单独的 CSS 文件 (只用在生产环境中 )
+      // 也可以是一个传递给 `extract-text-webpack-plugin` 的选项对象
       extract: true,
-      // 开启 CSS source maps?
+      // 是否开启 CSS source map？
       sourceMap: false,
       // css预设器配置项
-      loaderOptions: {},
+      loaderOptions: {
+        scss: { 
+          prependData: `@import "@/style/main.scss";`
+        }
+      },
       // 启用 CSS modules for all css / pre-processor files.
-      modules: false
-  },*/
+      // requireModuleExtension:true
+  },
   // use thread-loader for babel & TS in production build
   // enabled by default if the machine has more than 1 cores
   parallel: require('os').cpus().length > 1,

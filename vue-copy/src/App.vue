@@ -8,14 +8,14 @@
 </template>
 
 <script>
-import headMenu from "./components/head"
+import headMenu from "./components/head";
+
 export default {
   components:{
-    headMenu
+    headMenu,
   }
 }
 </script>
 
 <style lang="scss">
-
 </style>

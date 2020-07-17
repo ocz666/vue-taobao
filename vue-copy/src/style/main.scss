@@ -1,0 +1,9 @@
+@import "./elementui.scss";
+
+
+body{
+  font-family: "宋体";
+  .el-popover{
+    min-width: 0 !important;
+  }
+}

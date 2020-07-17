@@ -1,4 +1,5 @@
 import Vue from "vue";
+import index from "./Index";
 import VueRouter from "vue-router";
 import LocationSelect from "../views/headMenuItem/LocationSelect";
 import Register from "../views/headMenuItem/Register";
@@ -14,6 +15,15 @@ import Navigation from "../views/headMenuItem/Navigation";
 Vue.use(VueRouter);
 
 const routes = [
+  {
+    path:"/",
+    redirect:"/index",
+  },
+  {
+    path:"/index",
+    name:"首页",
+    component:index,
+  },
   {
     path: "/locationSelect",
     name: "中国大陆",
