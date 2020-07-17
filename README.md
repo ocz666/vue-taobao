@@ -16,4 +16,3 @@ vue-cli +elementUI
 
 最终界面
 
-![image-20200717163540600](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20200717163540600.png)
