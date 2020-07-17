@@ -16,3 +16,4 @@ vue-cli +elementUI
 
 最终界面
 
+![image](https://github.com/ocz666/vue-/blob/master/vue-copy/src/static/%E5%B1%95%E7%A4%BA%E9%A1%B5%E9%9D%A2/TIM%E5%9B%BE%E7%89%8720200717164405.png)
